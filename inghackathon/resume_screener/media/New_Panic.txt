@@ -1,0 +1,14 @@
+Alert if uncommitted tasks reaches a threshold with hours available
+
+Graph for tasks that are being assisted, i.e. have the tags 
+Count for Tasks with tags / total tasks 
+
+knowledge assist (SME helps)
+agile assist (extra pair of hands)
+
+OhWaiter is now the model
+
+New 
+- Emails every day
+- Landing Page 
+	- Numbers for the simple stuff
