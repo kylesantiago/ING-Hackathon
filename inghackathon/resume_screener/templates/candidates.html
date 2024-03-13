@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - Candidate Screening - List of Job Openings</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+    <!-- Favicons -->
+  <link href="/static/assets/img/favicon.png" rel="icon">
+  <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/static/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/static/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/static/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Candidate Screening
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .container1 {
+            height: 100vh;
+            width: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background-color: #fcfcfc;
+            }
+
+            .card1 {
+            border-radius: 10px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+            width: 600px;
+            height: 260px;
+            background-color: #ffffff;
+            padding: 10px 30px 40px;
+            }
+
+            .card1 h3 {
+            font-size: 22px;
+            font-weight: 600;
+            
+            }
+
+            .drop_box1 {
+            margin: 10px 0;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 3px dotted #a3a3a3;
+            border-radius: 5px;
+            }
+
+            .drop_box1 h4 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #2e2e2e;
+            }
+
+            .drop_box1 p {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            color: #a3a3a3;
+            }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+        <img src="/static/assets/img/ING_Primary_Logo_RGB.png" alt="">
+        <span class="d-none d-lg-block">Candidate Screening</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <!-- <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div> --><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <!-- <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a> --><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <!-- <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a> --><!-- End Messages Icon -->
+
+          <!-- <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul> --><!-- End Messages Dropdown Items
+
+        </li> --><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="/static/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">John Dhoe</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>John Dhoe</h6>
+              <span>Recruiter</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'home' %}">
+          <i class="bi bi-grid"></i>
+          <span>List of Job Opening</span>
+        </a>
+      </li>
+
+      <!-- End Dashboard Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+     <main id="main" class="main">
+        
+        <section class="section dashboard">
+            <div class="row"><div>
+          <div class="row">
+
+            
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                  <h5 class="card-title">List of Candidates</h5>
+                  <div style="text-align: right;">                   
+                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Upload CVs</button>
+                  </div>
+                  <br/>
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Job Title</th>
+                        <th scope="col">Source file</th>
+                        <th scope="col">Overall Score</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+					  <tr>
+                        <th scope="row"><a href="#">1</a></th>
+                        <td>Johnwell Eufeminiano</td>
+                        <td>Pega Resident Engineer III</td>
+                        <td><a href="http://127.0.0.1:8000/media/Eufeminiano_Johnwell_Resume.pdf" target="_blank" rel="noopener noreferrer">Eufeminiano_Johnwell_Resume.pdf</a></td>
+                        <td><span class="badge bg-success"><font size="5">98</font></span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">2</a></th>
+                        <td>Brandon Jacob</td>
+                        <td>Pega Resident Engineer</td>
+                        <td><a href="#">BrandonJacob_resume.pdf</a></td>
+                        <td><span class="badge bg-success"><font size="5">96</font></span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">3</a></th>
+                        <td>Bridie Kessler</td>
+                        <td>Chapter Lead Engineer II</td>
+                        <td><a href="#">BridieKessler_resume2.pdf</a></td>
+                          <td><span class="badge bg-success"><font size="5">95</font></span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">4</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td>Top Laner</td>
+                        <td><a href="#">AshleighLangosh_resume(1).pdf</a></td>
+                        <td><span class="badge bg-warning"><font size="5">75</font></span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">5</a></th>
+                        <td>Angus Grady</td>
+                        <td>Mid Laner</td>
+                        <td><a href="#">AngusGrady_resume</a></td>
+                        <td><span class="badge bg-warning"><font size="5">65</font></span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">6</a></th>
+                        <td>Raheem Lehner</td>
+                        <td>Power Forward</td>
+                        <td><a href="#">RaheemLehner_resume.pdf</a></td>
+                        <td><span class="badge bg-danger"><font size="5">45</font></span></td>
+                      </tr>
+                    </tbody>
+                    
+                  </table>
+
+                </div>
+
+              </div>
+            </div>
+
+              </div>
+            </div></div>
+        </section>
+    </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <!-- <div class="copyright">
+      &copy; Copyright <strong><span>Candidate Screening</span></strong>. All Rights Reserved
+    </div> -->
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script>
+            const dropArea = document.querySelector(".drop_box1"),
+            button = dropArea.querySelector("button"),
+            dragText = dropArea.querySelector("header"),
+            input = dropArea.querySelector("input");
+            let file;
+            var filename;
+
+            button.onclick = () => {
+            input.click();
+            };
+
+            input.addEventListener("change", function (e) {
+                var text = '';
+                for (let i = 0; i < e.target.files.length; i++) {
+                text += "<li>" + e.target.files[i].name + "</li>";
+                }  
+            let filedata = `
+                <form action="" method="post">
+                <div class="form">
+                <h4>
+                    <ul>
+                        ${text}
+                    </ul>    
+                </h4>
+                <button class="btn btn btn-success" onclick="myFunction()">Upload</button>
+                </div>
+                </form>`;
+            dropArea.innerHTML = filedata;
+            });
+        </script>
+        <script>
+            function myFunction() {
+            setTimeout(closeTab,2000);
+            const element = document.getElementById("demo");
+            element.remove();
+            var x = document.getElementById("loading");
+            x.style.display = "block";
+            }
+
+            function closeTab() {
+                window.location.href = "candidates2.html";
+                            }
+
+           
+
+      </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="/static/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="/static/assets/vendor/quill/quill.min.js"></script>
+  <script src="/static/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="/static/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+
+
+</body>
+
+</html>

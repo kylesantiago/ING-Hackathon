@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$w2ax-%+3w71l!dv2sxn*2p_p14qcp+27)7*%f(%3yr+66jbwh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,6 +121,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
+STATICFILES_DIR =[
+os.path.join(BASE_DIR, 'static')
+]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR /'resume_screener'/ 'media'
