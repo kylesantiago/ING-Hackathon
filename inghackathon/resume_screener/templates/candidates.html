@@ -356,57 +356,19 @@
                   <table class="table table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Job Title</th>
                         <th scope="col">Source file</th>
                         <th scope="col">Overall Score</th>
                       </tr>
                     </thead>
                     
                     <tbody>
-					  <tr>
-                        <th scope="row"><a href="#">1</a></th>
-                        <td>Johnwell Eufeminiano</td>
-                        <td>Pega Resident Engineer III</td>
-                        <td><a href="http://127.0.0.1:8000/media/Eufeminiano_Johnwell_Resume.pdf" target="_blank" rel="noopener noreferrer">Eufeminiano_Johnwell_Resume.pdf</a></td>
-                        <td><span class="badge bg-success"><font size="5">98</font></span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">2</a></th>
-                        <td>Brandon Jacob</td>
-                        <td>Pega Resident Engineer</td>
-                        <td><a href="#">BrandonJacob_resume.pdf</a></td>
-                        <td><span class="badge bg-success"><font size="5">96</font></span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">3</a></th>
-                        <td>Bridie Kessler</td>
-                        <td>Chapter Lead Engineer II</td>
-                        <td><a href="#">BridieKessler_resume2.pdf</a></td>
-                          <td><span class="badge bg-success"><font size="5">95</font></span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">4</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td>Top Laner</td>
-                        <td><a href="#">AshleighLangosh_resume(1).pdf</a></td>
-                        <td><span class="badge bg-warning"><font size="5">75</font></span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">5</a></th>
-                        <td>Angus Grady</td>
-                        <td>Mid Laner</td>
-                        <td><a href="#">AngusGrady_resume</a></td>
-                        <td><span class="badge bg-warning"><font size="5">65</font></span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">6</a></th>
-                        <td>Raheem Lehner</td>
-                        <td>Power Forward</td>
-                        <td><a href="#">RaheemLehner_resume.pdf</a></td>
-                        <td><span class="badge bg-danger"><font size="5">45</font></span></td>
-                      </tr>
+						{% for result_row in results %} 
+						<tr>
+							<th scope="row">{{result_row.res_name}}</th>
+							<td>{{result_row.overall}}</td>
+						</tr>
+						{% endfor %}
+					  
                     </tbody>
                     
                   </table>

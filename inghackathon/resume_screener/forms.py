@@ -19,6 +19,4 @@ class MultipleFileField(forms.FileField):
 
 
 class ApplicantForm(forms.Form): 
-    first_name = forms.CharField()
-    last_name = forms.CharField()
     resume_field = MultipleFileField()

@@ -86,7 +86,9 @@
             color: #a3a3a3;
             }
 
-
+	<!-- label[for=id_resume_field], #id_resume_field {
+	display:none;
+	} -->
   </style>
 </head>
 
@@ -396,16 +398,22 @@
                   <div class="container1" style="max-height:500px;" id="demo">
                     <div class="card1">
                       <h3>Upload Files</h3>
+					  <form id="myForm" method="post" enctype="multipart/form-data">
                       <div id="filelist"></div>
-                      <div class="drop_box1">
+						{% csrf_token %} 
+					  <div id="xyz" class="drop_box1">
+                      
                         <header>
                           <h4>Select File here</h4>
                         </header>
                         <p>Files Supported: PDF, DOC, DOCX</p>
-                        <input type="file" hidden multiple accept=".doc,.docx,.pdf" id="fileID" style="display:none;">
-                        <button class="btn btn btn-success">Choose File</button>
+                        <!--<input type="file" multiple accept=".doc,.docx,.pdf" id="fileID" style="display:none;">-->
+						
+						{{ form.as_p }}
+                        <button type="button" id="choosefile" class="btn btn btn-success">Choose File</button>
                       </div>
                     </div>
+					  </form>
                   </div>
                   
             
@@ -421,7 +429,7 @@
         </div>
       </div>
         </section>
-    </main><!-- End #main -->
+    </main><!-- End #main
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -444,12 +452,14 @@
             const dropArea = document.querySelector(".drop_box1"),
             button = dropArea.querySelector("button"),
             dragText = dropArea.querySelector("header"),
-            input = dropArea.querySelector("input");
+            input = dropArea.querySelector("input[type='file']");
             let file;
             var filename;
 
             button.onclick = () => {
               input.click();
+			  
+			  document.getElementById("xyz").style["display"] = "none"
             };
 
             input.addEventListener("change", function (e) {
@@ -460,7 +470,7 @@
 
                 }  
             let filedata = `
-                <form action="" method="post">
+                
                 <div class="form">
                 <h4>
                     <ul class="list-group">
@@ -468,28 +478,43 @@
                     </ul>    
                 </h4>
                 <div style="text-align:center">
-                <button class="btn btn btn-success" onclick="myFunction()">Upload</button>
+				<input class="btn btn btn-success" type="submit" value="Upload">
+                
                 <div>
-                </div>
-                </form>`;
-            // dropArea.innerHTML = "";
-            // dropArea.innerHTML = "";
+                </div>`;
             filelist.innerHTML = filedata;
-            $('.drop_box1').remove();
-            });
+            //$('.drop_box1').attr("style='display=none'");
+            
+//			$('#choosefile').click(function(){
+	//		  alert("The paragraph was clicked.");
+		//	});
+			//document.getElementById("myCheck").click();
+			});
+			
+			
+            
+			
         </script>
         <script>
             function myFunction() {
-            setTimeout(closeTab,5000);
+            //setTimeout(closeTab,2000);
             const element = document.getElementById("demo");
             element.remove();
             var x = document.getElementById("loading");
             x.style.display = "block";
             }
-
             function closeTab() {
-                window.location.href = "{% url 'candidates' %}";
+                //window.location.href = "{% url 'candidates' %}";
+				
+				
+
             }
+			
+			//function choosefile() {
+                //alert("The paragraph was clicked.");
+				
+				//window.location.href = "{% url 'candidates' %}";
+            //}
 
            
 
